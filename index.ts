@@ -50,7 +50,8 @@ async function handler(_req: Request): Promise<Response> {
     const result = await response.json();
 
     console.log(result);
-    return new Response(JSON.stringify(result), {
+    const dico = {value: parseFloat(result.result)}
+    return new Response(JSON.stringify(dico), {
       status: 200,
       headers: {
         "Content-Type": "application/json",
