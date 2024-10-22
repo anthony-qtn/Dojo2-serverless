@@ -15,7 +15,7 @@ async function handler(_req: Request): Promise<Response> {
     handlePreFlightRequest();
   }
 
-  const word : string = _req.url.split("/")[-1];
+  const word : string = _req.url.split("/").length[-1];
   console.log(word);
 
   const headers = new Headers();
