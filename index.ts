@@ -16,14 +16,13 @@ async function handler(_req: Request): Promise<Response> {
   }
 
   const word : string = _req.url.split("/").pop() || "";
-  console.log(word);
 
   const headers = new Headers();
   headers.append("Content-Type", "application/json");
 
   const similarityRequestBody = JSON.stringify({
     word1: "centrale",
-    word2: "supelec",
+    word2: word,
   });
 
   const requestOptions = {
